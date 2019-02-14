@@ -1,0 +1,58 @@
+﻿@model MagicSing.Models.Playlist
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>
+   Details
+</h2>
+
+<div>
+    <table class="table">
+        <tr>
+            <th>
+                Artist
+            </th>
+            <th>
+                Album
+            </th>
+            <th>
+                Year
+            </th>
+            <th>
+                URL
+            </th>
+            <th>
+                Actions
+            </th>
+        </tr>
+        @foreach (var playlistDetails in Model.Musics)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => playlistDetails.Artist)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => playlistDetails.Album)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => playlistDetails.Year)
+                </td> 
+                <td>
+                    @Html.DisplayFor(modelItem => playlistDetails.URL)
+                </td>
+               
+                <td>
+                    @Html.ActionLink("Play", "Play", "Music", new { id = playlistDetails.MusicID }, null) |
+                    @Html.ActionLink("Edit", "Edit", "Music", new { id = playlistDetails.MusicID }, null) |
+                    @Html.ActionLink("Delete", "Delete", "Music", new { id = playlistDetails.MusicID }, null)
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+<p>
+    @Html.ActionLink("Back to List", "List")
+</p>
+

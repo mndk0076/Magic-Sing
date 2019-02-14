@@ -1,0 +1,10 @@
+﻿@model MagicSing.Models.Music
+
+@{
+    ViewBag.Title = "Play";
+}
+
+<h2>@Html.Raw(Model.Title) by @Html.Raw(Model.Artist)</h2>
+<div>
+    <iframe src="@Html.Raw(Model.URL)?autoplay=1" width="700" height="415" allow="autoplay" frameborder="0"></iframe>
+</div>

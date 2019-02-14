@@ -1,0 +1,40 @@
+﻿@model MagicSing.Models.ViewModels.PlaylistItem
+@{
+    ViewBag.Title = "New";
+}
+
+<h2>Add Music</h2>
+
+<form method="POST" action="/Music/Create">
+    <div class="form-group">
+        <label class="control-label">Playlist</label>
+        <select id="Playlist_New" name="Playlist_New" class="form-control">
+            @foreach (var playlist in Model.playlists)
+            {
+                <option value="@playlist.PlaylistID">@playlist.PlaylistName</option>
+            }
+        </select>
+    </div>
+    <div class="form-group">
+        <input id="Title_New" name="Title_New" class="form-control" placeholder="Title"/>
+    </div>
+    <div class="form-group">
+        <input id="Artist_New" name="Artist_New" class="form-control" placeholder="Artist"/>
+    </div>
+    <div class="form-group">
+        <input id="Album_New" name="Album_New" class="form-control" placeholder="Album"/>
+    </div>
+    <div class="form-group">
+        <input id="Year_New" type="date" name="Year_New" class="form-control" placeholder="Year"/>
+    </div>
+    <div class="form-group">
+        <input id="Url_New" name="URL_New" class="form-control" placeholder="URL"/>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Submit" class="btn btn-success"/>
+        </div>
+    </div>
+    <hr />
+</form>
