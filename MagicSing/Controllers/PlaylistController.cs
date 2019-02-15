@@ -39,7 +39,7 @@ namespace MagicSing.Controllers
 
             return View(playlist);
         }
-        // GET: Authors/Edit/5
+
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -53,6 +53,7 @@ namespace MagicSing.Controllers
             }
             return View(playlist);
         }     
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "PlaylistID,PlaylistName")] Playlist playlist)

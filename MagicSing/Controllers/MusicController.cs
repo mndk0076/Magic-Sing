@@ -20,7 +20,7 @@ namespace MagicSing.Controllers
         // GET: Music
         public ActionResult List(string search)
         { 
-            return View(db.Musics.Where(x => x.Title.StartsWith(search) || search == null).ToList());
+            return View(db.Musics.Where(x => x.Title.Contains(search) || search == null).ToList());
         }
 
         public ActionResult Play(int? id)

@@ -12,6 +12,9 @@
     <table class="table">
         <tr>
             <th>
+                Title
+            </th>
+            <th>
                 Artist
             </th>
             <th>
@@ -19,10 +22,7 @@
             </th>
             <th>
                 Year
-            </th>
-            <th>
-                URL
-            </th>
+            </th>           
             <th>
                 Actions
             </th>
@@ -31,6 +31,9 @@
         {
             <tr>
                 <td>
+                    @Html.DisplayFor(modelItem => playlistDetails.Title)
+                </td>
+                <td>
                     @Html.DisplayFor(modelItem => playlistDetails.Artist)
                 </td>
                 <td>
@@ -38,11 +41,7 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => playlistDetails.Year)
-                </td> 
-                <td>
-                    @Html.DisplayFor(modelItem => playlistDetails.URL)
-                </td>
-               
+                </td>                               
                 <td>
                     @Html.ActionLink("Play", "Play", "Music", new { id = playlistDetails.MusicID }, null) |
                     @Html.ActionLink("Edit", "Edit", "Music", new { id = playlistDetails.MusicID }, null) |
